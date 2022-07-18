@@ -1,0 +1,15 @@
+com/example/studentsscores/report/PrefilledData.class
+com/example/studentsscores/report/Report.class
+com/example/studentsscores/report/ReportService.class
+com/example/studentsscores/student/StudentRepository.class
+com/example/studentsscores/report/ReportRequest.class
+com/example/studentsscores/report/Report$ReportBuilder.class
+com/example/studentsscores/report/ReportServiceImpl.class
+com/example/studentsscores/student/Student$StudentBuilder.class
+com/example/studentsscores/report/ReportResponse.class
+com/example/studentsscores/report/ReportController.class
+com/example/studentsscores/report/ReportRequest$ReportRequestBuilder.class
+com/example/studentsscores/report/ReportRepository.class
+com/example/studentsscores/report/ReportResponse$ReportResponseBuilder.class
+com/example/studentsscores/student/Student.class
+com/example/studentsscores/StudentsScoresApplication.class

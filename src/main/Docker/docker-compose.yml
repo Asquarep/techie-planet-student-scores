@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  app:
+    image: 'student-scores-postgres:latest'
+    build:
+      context: .
+    ports:
+      - "8081:8080"
+    container_name: student-scores
+    depends_on:
+      - studentDB
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://studentDB:5432/student-scores
+      - SPRING_DATASOURCE_USERNAME=student-scores
+      - SPRING_DATASOURCE_PASSWORD=student-scores
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  studentDB:
+    image: 'postgres:13.1-alpine'
+    container_name: studentDB
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=student-scores
+      - POSTGRES_PASSWORD=student-scores
