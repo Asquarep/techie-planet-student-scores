@@ -1,0 +1,36 @@
+Answer 1:
+Only three of the queries given will work. All 5 will work with minor adjustments to two of them, as shown below.
+
+SELECT DISTINCT salary FROM emp ORDER BY salary DESC LIMIT 1 OFFSET 1; //(CORRECTED)
+
+SELECT MAX(salary) FROM emp WHERE salary < (SELECT MAX(salary) FROM emp);
+
+SELECT salary FROM (SELECT DISTINCT salary FROM emp ORDER BY salary DESC LIMIT 2) AS emp ORDER BY salary LIMIT 1;
+
+SELECT DISTINCT salary FROM (SELECT salary FROM emp ORDER BY salary DESC LIMIT 2) AS emp ORDER BY salary LIMIT 1;
+
+SELECT salary FROM emp ORDER BY salary DESC LIMIT 1 OFFSET 1; // (CORRECTED)
+
+Answer 2:
+SELECT g.yr, c.country FROM games g
+JOIN city
+ON c.name=g.city
+
+Answer 3:
+Left join takes all the data from the first table, and then joins the specific data from the second table..
+So if I were to select the year from the games table, and left-join the country from the city table where
+the city names match, the program would select all the data I call from the games table, including the
+year where the city data is missing. It would also return the entries where the join condition matches,
+i.e. it would select Greece, China and UK.
+The Opposite is the case for a right join. If I select all the countries on the right, and right-join
+the year on the city name from the left table, the database would return all the entries on the country column,
+and join the year 2004, 2008, and 2012 for Greece, China and UK respectively, but it will leave the year data
+for Australia blank.
+
+Answer 4:
+SELECT userId, AVG(duration)from sessions
+GROUP BY userId
+HAVING COUNT(userId) > 1;
+
+
+
