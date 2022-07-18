@@ -5,5 +5,10 @@ simply run the main methods in each class. You can add more tests to check vario
 
 The SQL answers are in the SQL Package in the resources folder
 
+SAMPLE TASK
+
 The sample task is in src/main/java/
 integration tests are written in src/test/java
+To run the application, startup docker and access the endpoints at localhost:8081
+There are 3 students preloaded into the database, with whuch you can test the application.
+The three students have IDs of 1, 2, 3, respectively.
